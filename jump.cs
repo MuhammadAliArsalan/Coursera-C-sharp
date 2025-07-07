@@ -5,21 +5,21 @@ public class Jumps
     public static void table()
     {
         Console.WriteLine("Enter table number: ");
-        int tableNo=int.Parse(Console.ReadLine());
+        int tableNo = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Enter the range: ");
-        int range= int.Parse(Console.ReadLine());
+        int range = int.Parse(Console.ReadLine());
 
         Console.Write('\n');
 
-        for(int i = 1; i <= range; i++)
+        for (int i = 1; i <= range; i++)
         {
             Console.WriteLine($"{tableNo} * {i} = {tableNo * i}");
 
         }
 
     }
-   
+
     public static void testBreak()
     {
 
@@ -34,11 +34,11 @@ public class Jumps
 
     public static void testContinue()
     {
-        for(int i=0;i<20;i++)
-        { 
+        for (int i = 0; i < 20; i++)
+        {
             if (i % 2 == 0)
                 continue;    //skip even numbers
-            Console.WriteLine("Odd no "+i);
+            Console.WriteLine("Odd no " + i);
         }
     }
 
@@ -48,6 +48,7 @@ public class Jumps
         string role = Console.ReadLine().ToLower();
 
         switch (role)
+
         {
             case "admin":
                 Console.WriteLine("Welcome Admin.");

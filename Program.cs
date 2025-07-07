@@ -17,27 +17,37 @@ public class Program
 
         //Operators.cs
 
-        Operators.CalculateNetSalary();
-        Operators.CalTemp();
-        Operators.Verified();
+        //Operators.CalculateNetSalary();
+        //Operators.CalTemp();
+        //Operators.Verified();
 
-        //Conditionals.cs
+        ////Conditionals.cs
 
-        Conditionals.canVote();
-        Conditionals.isAllowed();
+        //Conditionals.canVote();
+        //Conditionals.isAllowed();
 
-        //Loops.cs
+        ////Loops.cs
 
-        Loops.loop1();
-        Loops.loop2();
-        Loops.loop3();
+        //Loops.loop1();
+        //Loops.loop2();
+        //Loops.loop3();
 
-        //jumps.cs
+        ////jumps.cs
 
-        Jumps.table();
-        Jumps.testBreak();
-        Jumps.testContinue();
-        Jumps.RoleCheck();
+        //Jumps.table();
+        //Jumps.testBreak();
+        //Jumps.testContinue();
+        //Jumps.RoleCheck();
+
+        //Array_Prac.cs
+        Array_Prac1.array1();
+        Array_Prac1.MultiArray();
+        Array_Prac1.JaggedArray();
+
+        //Strings.cs
+
+        StringTut.String1();
+
 
     }
 }
