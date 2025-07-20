@@ -121,37 +121,119 @@ public class Program
         //stu.Study();
 
         //PolymorphTut.cs
-        Person p1 = new Person();
-        p1.PayBill();
-        p1.PayBill(20);
-        p1.PayBill(7000, "High Income");
+        //Person p1 = new Person();
+        //p1.PayBill();
+        //p1.PayBill(20);
+        //p1.PayBill(7000, "High Income");
 
-        Parent P1 = new Parent();
-        Parent P2 = new Parent("Ali Arslan");
-        Parent P3 = new Parent("hamza Khan", 34);
+        //Parent P1 = new Parent();
+        //Parent P2 = new Parent("Ali Arslan");
+        //Parent P3 = new Parent("hamza Khan", 34);
 
-        Consumer standard = new Consumer();
-        Consumer low = new LowerInc();
-        Consumer high = new HighInc();
-
-
-        standard.PayBill(120);   // Standard user
-        low.PayBill(120);        // Lower income user
-        high.PayBill(120);
-
-        //Abstract Tut.cs
+        //Consumer standard = new Consumer();
+        //Consumer low = new LowerInc();
+        //Consumer high = new HighInc();
 
 
-        // Ywe can't do this:
-        // BankAccount acc = new BankAccount();  (Compiler Error;can not be insatantiated)
+        //standard.PayBill(120);   // Standard user
+        //low.PayBill(120);        // Lower income user
+        //high.PayBill(120);
 
-        // But ywe can do this:
-        BankAccount acc = new SavingAccount(); 
+        ////Abstract Tut.cs
 
-        acc.Deposit();    // Output: Amount deposited...
-        acc.Withdraw();   // Output: Amount withdrawn...
-        acc.Balance();    // Output: Balance in saving account
-        acc.GetMessage(); // Output: Welcome to ABC Bank.
+
+        //// Ywe can't do this:
+        //BankAccount acc = new BankAccount(); // (Compiler Error;can not be insatantiated)
+
+        //// But ywe can do this:
+        //BankAccount acc = new SavingAccount();
+
+        //acc.Deposit();    // Output: Amount deposited...
+        //acc.Withdraw();   // Output: Amount withdrawn...
+        //acc.Balance();    // Output: Balance in saving account
+        //acc.GetMessage(); // Output: Welcome to ABC Bank.
+
+
+        //// Interfaces Tut
+        //Console.WriteLine("\nInterfaces \n");
+        //IBankAccount myAccount = new SavingAcct();
+
+        //myAccount.addBalance(1000);
+        //myAccount.addBalance(340);
+        //myAccount.withDraw(400);
+        //myAccount.CloseAccount();
+        //Console.WriteLine("Balance is: " + myAccount.GetBalance());
+
+
+        //Static
+        Console.WriteLine(Calculate.Increment()); // 1
+        Console.WriteLine(Calculate.Increment()); // 2
+        Console.WriteLine(Calculate.Decrement()); // 1
+        Console.WriteLine("Final Count: " + Calculate.GetCount());
+
+
+        //Extension methods
+
+        int number = 100;
+
+        bool result = number.IsGreaterThan(1000);
+
+        Console.WriteLine($"Is {number} greater than 1000? {result}");
+
+        // Try with another value
+        Console.WriteLine(number.IsGreaterThan(10)); //  True
+
+        bool result2 = number.IsSmallerThan(23);
+        Console.WriteLine($"Is {number} smaller than 23 {result2}");
+
+        bool result3= number.IsSmallerThan(120);
+        Console.WriteLine($"Is {number} smaller than 120 {result3}");
+
+
+        //Extension methods
+
+        PartialEmployee emp = new PartialEmployee
+        {
+            EmployeeID = 101,
+            EmployeeName = "Ali"
+        };
+
+        emp.Show();
+
+
+        // Property Csharp
+
+        Patient p = new Patient();
+        p.Name = "Ali";
+        p.PatientID = 123;
+        p.Age = 15;  //  "Invalid age"
+        p.Age = 25;  // Valid
+
+
+        Console.WriteLine($"Patient: {p.Name}, ID: {p.PatientID}");
+        Console.WriteLine("User works as " + p.Job);
+        Console.WriteLine("The age of user is " + p.Age);
+
+        // Indexers
+        StringIndexers index = new StringIndexers();
+        index[0] = "First thing";
+        index[1] = "Second thing";
+        index[5] = "5th thing";
+       
+
+
+        Console.WriteLine("\n"+index[0]);  // Output: Hello
+        Console.WriteLine(index[1]);
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine($"Index {i}: {index[i]}");
+        }
+
+
+
 
     }
 }
+
+
