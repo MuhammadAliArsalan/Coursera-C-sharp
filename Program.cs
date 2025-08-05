@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 
+
 public class Program
 {
     public static void Main(string[] args)
@@ -231,7 +232,71 @@ public class Program
         }
 
 
+        //enums
 
+        EnumDemo enumDemo = new EnumDemo();
+        enumDemo.DisplayDays();
+
+        //exceptions
+        Console.WriteLine("\tExceptions in Csharp");
+        Calculation cal = new Calculation();
+        cal.Calculate(120, 5);
+        cal.Calculate(120, 10);
+        //cal.CalculateAnother();
+
+        //Anonymous
+
+        AnonymousT run = new AnonymousT();
+        run.anom();
+
+        //Delegates
+
+        Console.WriteLine("\nDelegates");
+
+        // Point delegate to Addition method
+        CalculateDelegate calculate = new CalculateDelegate(Delegates.Addition);
+        Console.WriteLine("After Addition: " + calculate(20)); 
+
+        // Point delegate to Multiplication method
+        calculate = new CalculateDelegate(Delegates.Multiplication);
+        Console.WriteLine("After Multiplication: " + calculate(10)); // 15 * 2 = 30
+
+        // Display the final number
+        Console.WriteLine("Final number: " + Delegates.GetNumber()); // Output: 30
+
+        // multi-cast
+
+        Console.WriteLine("\nMulticst delegate");
+        CalculateDelegate calculate2 = Delegates.Addition;
+        calculate2 += Delegates.Multiplication;
+
+        // Call the multicast delegate
+        calculate2(5);
+
+        // Show final result
+        Console.WriteLine("Final number: " + Delegates.GetNumber());
+
+        //Delegates2
+
+      
+
+        //Events
+
+        Console.WriteLine("\nEvents");
+
+        EventsExample ev = new EventsExample();
+        ev.event_OddNumber += new EventsExample.delegate_OddNumber(EventMessage);
+        ev.addition();
+        Console.ReadLine();
+
+        static void EventMessage()
+        {
+            Console.WriteLine("Event executed:Odd number");
+        }
+
+        //Anonymous Methods
+        Console.WriteLine("\nAMs");
+        AnonymousMethodExample.InvokeMethod();
 
     }
 }
